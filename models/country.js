@@ -6,7 +6,7 @@ const countrySchema = new mongoose.Schema({
   Qara: { type: String },
   area: { type: String },
   currency: { type: String },
-  
+
   location: {
     type: {
       type: String,
@@ -15,6 +15,8 @@ const countrySchema = new mongoose.Schema({
     coordinates: [Number], // longitude , latitude
   },
 });
+
+countrySchema.index({ location: '2dsphere' });
 
 const Country = mongoose.model('Country', countrySchema);
 module.exports = Country;

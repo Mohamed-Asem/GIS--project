@@ -141,8 +141,7 @@ app.post('/country', async (req, res) => {
   }
 });
 
-// get all nearest locations from longitude and latitude of client location wi
-
+// get all nearest locations from longitude and latitude of client location
 app.get('/getAllNearestLocation', async (req, res) => {
   try {
     let maxDistance = req.query?.maxDistance || 500000000;
